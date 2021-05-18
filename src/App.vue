@@ -1,30 +1,33 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <slider-container></slider-container>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import SliderContainer from './components/SliderContainer.vue';
+export default defineComponent({
+  components: {
+    SliderContainer,
+  },
+});
+</script>
 
 <style lang="scss">
 #app {
+  font-size: 16px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+@media (min-width: 767px) {
+  #app {
+    font-size: 19px;
   }
 }
 </style>
